@@ -10,6 +10,7 @@ const BannerStyle = {
 }
 
 export function Home( props ) {
+    const articles = props.items()
     return(
         <main className="home">
             <Banner text="Welcome" style={BannerStyle} />
