@@ -13,9 +13,12 @@ export function Home( props ) {
     // store articles
     const [ articles, setArticles ] = useState([])
 
-    props.items().then( (data) => {
-       setArticles( data )
-    } )
+    useEffect( () => {
+        props.items().then( (data) => {
+            setArticles( data )
+         } )
+    })
+   
 
     const ArticleView = ( props ) => {
         return (
@@ -27,7 +30,7 @@ export function Home( props ) {
     }
 
     const ArticlesList = ( props ) => {
-        if( articles ) {
+        if( articles.length ) {
             const Collection = articles.map( (article) => {
                 return <ArticleView article={ article } />
             })
