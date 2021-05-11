@@ -14,10 +14,12 @@ export function Home( props ) {
     const [ articles, setArticles ] = useState([])
 
     useEffect( () => {
-        props.items().then( (data) => {
-            setArticles( data )
-         } )
-    })
+        if( articles.length === 0 ) {
+            props.items().then( (data) => {
+                setArticles( data )
+             } )
+        }
+    },[articles])
    
 
     const ArticleView = ( props ) => {
