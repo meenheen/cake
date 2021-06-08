@@ -2,6 +2,7 @@ import {Switch,Route} from 'react-router-dom'
 import {Home} from './Home'
 import {About} from './About'
 import {Contact} from './Contact'
+import {Cakes} from './Cakes'
 // firebase
 import firebase from 'firebase/app'
 import 'firebase/firestore'
@@ -40,7 +41,10 @@ export function Content(props) {
             <Route path="/about">
                 <About />
             </Route>
-            <Route path="/">
+            <Route path="/cakes">
+                <Cakes />
+            </Route>
+            <Route exact path="/">
                 <Home items={getArticles} />
             </Route>
         </Switch>
