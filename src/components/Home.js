@@ -13,41 +13,41 @@ export function Home( props ) {
     // store articles
     const [ articles, setArticles ] = useState([])
 
-    useEffect( () => {
-        if( articles.length === 0 ) {
-            props.items().then( (data) => {
-                setArticles( data )
-             } )
-        }
-    },[articles])
+    // useEffect( () => {
+    //     if( articles.length === 0 ) {
+    //         props.items().then( (data) => {
+    //             setArticles( data )
+    //          } )
+    //     }
+    // },[articles])
    
 
-    const ArticleView = ( props ) => {
-        return (
-            <div className="article">
-                <h3>{ props.article.title }</h3>
-                <p>{ props.article.author }</p>
-            </div>
-        )
-    }
+    // const ArticleView = ( props ) => {
+    //     return (
+    //         <div className="article">
+    //             <h3>{ props.article.title }</h3>
+    //             <p>{ props.article.author }</p>
+    //         </div>
+    //     )
+    // }
 
-    const ArticlesList = ( props ) => {
-        if( articles.length ) {
-            const Collection = articles.map( (article) => {
-                return <ArticleView article={ article } />
-            })
-            return Collection
-        }
-        else {
-            return( <p>Sorry, no articles!</p>)
-        }
-    }
+    // const ArticlesList = ( props ) => {
+    //     if( articles.length ) {
+    //         const Collection = articles.map( (article) => {
+    //             return <ArticleView article={ article } />
+    //         })
+    //         return Collection
+    //     }
+    //     else {
+    //         return( <p>Sorry, no articles!</p>)
+    //     }
+    // }
 
     return(
         <main className="home">
             <Banner text="Welcome" style={BannerStyle} />
             <h1>Home</h1>
-            <ArticlesList />
+            {/* <ArticlesList /> */}
         </main>
     )
 }
