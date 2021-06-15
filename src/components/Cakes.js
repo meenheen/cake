@@ -32,9 +32,13 @@ export function Cakes(props) {
     const CakesList = () => {
         if( cakes !== undefined ) {
             const Items = cakes.posts.map( ( item ) => {
+                const createContent = () => {
+                    return {__html: item.content }
+                }
                 return(
                     <div className="single-cake">
                         <h3>{item.title}</h3>
+                        <div className="cake-content" dangerouslySetInnerHTML={ createContent() }></div>
                     </div>
                 )
             })
