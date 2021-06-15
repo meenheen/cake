@@ -20,7 +20,6 @@ export function Cakes(props) {
 
     const Counter = () => {
         if (cakes !== undefined) {
-            console.log(cakes)
             return (
                 <p>We have {cakes.found} cakes </p>
             )
@@ -30,10 +29,31 @@ export function Cakes(props) {
         }
     }
 
+    const CakesList = () => {
+        if( cakes !== undefined ) {
+            const Items = cakes.posts.map( ( item ) => {
+                return(
+                    <div className="single-cake">
+                        <h3>{item.title}</h3>
+                    </div>
+                )
+            })
+            return(
+                <div className="cakes-list">
+                    {Items}
+                </div>
+            )
+        }
+        else {
+            return( <p>Getting cakes ...</p>)
+        }
+    }
+
     return (
         <div className="cakes">
             <h2>Cakes</h2>
             <Counter />
+            <CakesList />
         </div>
     )
 }
