@@ -13,7 +13,7 @@ import {Cakes} from './Cakes'
 export function Content(props) {
     
     
-    const postsURL = "https://public-api.wordpress.com/rest/v1.1/sites/txtpublish.wordpress.com/posts/"
+    const postsURL = "https://public-api.wordpress.com/rest/v1.1/sites/google643234520.wordpress.com/posts/"
 
     return (
         <Switch>
